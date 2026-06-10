@@ -1,4 +1,6 @@
+require('dotenv').config();
 const cds = require('@sap/cds');
+const registerImageHandlers = require('./handlers/header-image');
 const { UPDATE, SELECT } = require('@sap/cds/lib/ql/cds-ql');
 
 module.exports = class Products extends cds.ApplicationService {
@@ -56,6 +58,9 @@ module.exports = class Products extends cds.ApplicationService {
 
             return await SELECT.one.from(Item).where({ ID: itemId });
          });
+        
+        registerImageHandlers(this);
         return super.init()
+        
     }
 }
