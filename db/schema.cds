@@ -12,12 +12,12 @@ entity Header : cuid, managed{
     lname    : String(30);
     country  : String(30);
     createOn : DateTime;
-    deliveryDate : DateTime;
-    orderStatus : Association to Status;
-    item     : Association to Item; //item_id
-    image : LargeBinary @Core.MediaType: imageType  @Core.ContentDisposition.Filename: fileName;
-    imageType     : String       @Core.IsMediaType;
-    fileName      : String;
+    deliveryDate    : DateTime;
+    orderStatus     : Association to Status;
+    item            : Composition of many Item on item.header = $self; //item_id
+    image           : LargeBinary @Core.MediaType: imageType  @Core.ContentDisposition.Filename: fileName;
+    imageType       : String       @Core.IsMediaType;
+    fileName        : String;
 }
 
 entity Item : cuid{
@@ -25,7 +25,9 @@ entity Item : cuid{
     description : String(40);
     releaseDate : DateTime;
     discontinuedDate: DateTime;
-    price           : Decimal(12,2)
+    price           : Decimal(12,2);
+    currency      : Association to Currencies default 'USD';
+    header          : Association to Header;
 }
 
 entity Status : CodeList {
@@ -34,5 +36,14 @@ entity Status : CodeList {
             released = 'Released';
             locked = 'Locked';
         };
-        criricality : Int16;
+        criticality : Int16;
 };
+
+
+entity Options : CodeList {
+    key code : String(10) enum {
+            C = 'Create';
+            R = 'Release';
+            L = 'Lock'
+        };
+}

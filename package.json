@@ -1,5 +1,5 @@
 {
-  "name": "CAPAPPLICATION",
+  "name": "capapplication",
   "version": "1.0.0",
   "dependencies": {
     "@sap/cds": "^9.9.1",

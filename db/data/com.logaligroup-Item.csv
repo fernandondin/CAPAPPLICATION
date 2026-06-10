@@ -1,4 +1,4 @@
-ID,name,description,releaseDate,discontinuedDate,price
-I001,Laptop Pro 15,High performance laptop,2026-01-01T00:00:00,,1500.00
-I002,Smartphone X,Latest generation smartphone,2026-02-15T00:00:00,,899.99
-I003,Wireless Headphones,Noise cancelling headphones,2026-03-10T00:00:00,,199.50
+ID,name,description,price,releaseDate,discontinuedDate,header_ID
+c1a4f8d2-9b3e-4f7a-8a6e-2f9d1e7b5c41,Product A,Description A,99.99,2026-01-01T00:00:00,2027-01-01T00:00:00,7d5e4f3a-1b2c-4d5e-8f9a-0b1c2d3e4f5a
+7e2d9a65-4c1f-4a8f-9d2b-0f3a6c8d9e72,Product B,Description B,149.99,2026-01-01T00:00:00,2027-01-01T00:00:00,8e6f5a4b-2c3d-5e6f-9a0b-1c2d3e4f5a6b
+f9b8d3c4-1a2b-4e5f-8c7d-6e1a9b2c3d54,Product C,Description C,199.99,2026-01-01T00:00:00,2027-01-01T00:00:00,9f7a6b5c-3d4e-6f7a-0b1c-2d3e4f5a6b7c
